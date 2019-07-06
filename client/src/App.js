@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
 import fire from "firebase/firebase-app";
-
 class App extends Component {
   authListender() {
     fire.auth().onAuthStateChanged(user => {
@@ -17,7 +16,7 @@ class App extends Component {
   }
 
   render() {
-    return <div>Hellow World!</div>
+    return <div>Hellow World!</div>;
   }
 }
 export default App;
