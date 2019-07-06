@@ -1,7 +1,7 @@
 import firebase from ("firebase");
 
 //Firebase configuration
-  var firebaseConfig = {
+  const firebaseConfig = {
     apiKey: "AIzaSyCSYm-xiv8rVeSn8-ILy-SnGhE76OmDNU8",
     authDomain: "social-bd5dc.firebaseapp.com",
     databaseURL: "https://social-bd5dc.firebaseio.com",
@@ -11,4 +11,5 @@ import firebase from ("firebase");
     appId: "1:615315112538:web:fb5503d4a8f7ab40"
   };
   // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+  const fire = firebase.initializeApp(firebaseConfig);
+  export default fire;
