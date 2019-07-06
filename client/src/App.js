@@ -1,9 +1,22 @@
 import React, { Component } from "react";
 import "./App.css";
-import fire from "firebase/firebase-app";
+import Fire from "firebase/firebase-app";
+import Login from "./login";
+import Home from "./home";
 
 class App extends Component {
-  authListender() {
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: {}
+    };
+  }
+
+  componentDidMount() {
+    this.authListener();
+  }
+
+  authListener() {
     fire.auth().onAuthStateChanged(user => {
       console.log(user);
       if (user) {
@@ -17,7 +30,7 @@ class App extends Component {
   }
 
   render() {
-    return <div className="App" />;
+    return <div className="App">{this.state.user ? <Home /> : <Login />}</div>;
   }
 }
 export default App;

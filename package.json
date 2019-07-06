@@ -1,5 +1,5 @@
 {
-  "name": "Social",
+  "name": "social",
   "version": "1.0.0",
   "description": "Social Final Project",
   "main": "server.js",
@@ -23,6 +23,7 @@
     "express": "^4.16.3",
     "firebase": "^6.2.4",
     "if-env": "^1.0.4",
-    "mongoose": "^5.6.3"
+    "mongoose": "^5.6.3",
+    "react-router-dom": "^5.0.1"
   }
 }
