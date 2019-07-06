@@ -3,7 +3,7 @@ const axios = require("axios");
 const path = require("path");
 
 app.post("/search", (req, res) => {
-  // set bookTitle to the req.body.title with spaces replaced with plus signs(+)
+  // set eventTitle to the req.body.title with spaces replaced with plus signs(+)
   let eventTitle = req.body.title.replace(/\s/g, "+");
   axios
     .get(
