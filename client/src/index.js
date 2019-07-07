@@ -1,12 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import Root from 'Root';
+import App from 'components/App';
+import FooterHotLinks from 'components/FooterHotLinks';
+import hot_tickets from 'dummy_data.json';
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(
+  <Root initialState={{tickets: hot_tickets}}>
+    <App />
+  </Root>
+  , document.querySelector('#hot_tickets')
+);
+ReactDOM.render(
+  <Root initialState={{tickets: hot_tickets}}>
+    <FooterHotLinks />
+  </Root>
+  , document.querySelector('#footer_hot_links')
+);
