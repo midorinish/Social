@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import ItemImage from 'components/ItemImage';
-import ItemWhosAttending from 'components/ItemWhosAttending';
-import ItemPriceRange from 'components/ItemPriceRange';
-import ItemDetails from 'components/ItemDetails';
-import ItemFooter from 'components/ItemFooter';
+import ItemImage from './ItemImage';
+import ItemWhosAttending from './ItemWhosAttending';
+import ItemPriceRange from './ItemPriceRange';
+import ItemDetails from './ItemDetails';
+import ItemFooter from './ItemFooter';
 
 class SectionItem extends Component {
   render() {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import ItemFooterCalendar from 'components/ItemFooterCalendar';
-import ItemFooterSocial from 'components/ItemFooterSocial';
+import ItemFooterCalendar from './ItemFooterCalendar';
+import ItemFooterSocial from './ItemFooterSocial';
 
 class ItemFooter extends Component {
   render() {

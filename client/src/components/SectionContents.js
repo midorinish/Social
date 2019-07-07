@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import SectionItem from 'components/SectionItem';
+import SectionItem from './SectionItem';
 
 class SectionContents extends Component {
   renderSectionItems() {

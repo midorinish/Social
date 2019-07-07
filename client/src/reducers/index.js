@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-import ticketsReducer from 'reducers/tickets'
+import ticketsReducer from './tickets'
 
 export default combineReducers({
   tickets: ticketsReducer

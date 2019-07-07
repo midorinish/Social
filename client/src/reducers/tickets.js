@@ -1,4 +1,4 @@
-import { UPDATE_TICKET } from 'actions/types';
+import { UPDATE_TICKET } from '../actions/types';
 
 export default (state = [], action) => {
   switch(action.type) {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import Section from 'components/Section';
+import Section from './Section';
 
 class App extends Component {
   render() {
