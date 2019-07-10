@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { appendFile } from "fs";
-import eventsCard.js from "./eventsCard"
+import eventsCard from "./eventsCard";
 
 const URL =
   " https://api.stubhub.com/sellers/oauth/accesstoken?name=&eventLocalDate=&venue=&city=&state=&country=";
@@ -47,7 +47,6 @@ class event extends Component {
           plot={this.state.eventInformation.Plot}
         />
 
-        
         {this.state.eventInformation.Rated === "G" && (
           <img src={this.state.eventInformation.Poster} alt={"event"} />
         )}
