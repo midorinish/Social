@@ -11,13 +11,13 @@ class App extends Component {
       } else {
         this.setState({ user: null });
         localStorage.removeItem("user");
-      }
+      };
     });
-  }
+  };
 
   render() {
     return <div>Hellow World!</div>;
-  }
+  };
 };
 
-export default (App);
+export default App;
