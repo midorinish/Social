@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import fire from "firebase/firebase-app";
+import fire from "firebase";
 
 class App extends Component {
   authListender() {
