@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import fire from "firebase/firebase-app";
+import Demo from "./config/components/location";
 class App extends Component {
   authListender() {
     fire.auth().onAuthStateChanged(user => {
@@ -16,9 +17,12 @@ class App extends Component {
   }
 
   render() {
-    return <div>
-      Hello World!
-    </div>
+    return (
+      <div>
+        Hello World!
+        <Demo />
+      </div>
+    );
   }
 }
 export default App;
