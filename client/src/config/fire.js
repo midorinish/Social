@@ -1,4 +1,4 @@
-const firebase = require("firebase/app");
+import app from "firebase/app";
 
 //Firebase configuration
 const firebaseConfig = {
@@ -11,5 +11,11 @@ const firebaseConfig = {
   appId: "1:615315112538:web:fb5503d4a8f7ab40"
 };
 // Initialize Firebase
-const fire = firebase.initializeApp(firebaseConfig);
-export default fire;
+
+class Firebase {
+  constructor() {
+    app.initializeApp(firebaseConfig);
+  }
+}
+
+export default Firebase;
