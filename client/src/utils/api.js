@@ -24,3 +24,4 @@ export default {
 //     return axios.get(BASEURL + query + APIKEY);
 //   }
 // };
+

@@ -15,9 +15,14 @@ class App extends Component {
     });
   };
 
+
   render() {
-    return <div>Hellow World!</div>;
-  };
-};
+    return (
+      <div>
+        Hello World! Hows it going?
+      </div>
+    );
+  }
+}
 
 export default App;
