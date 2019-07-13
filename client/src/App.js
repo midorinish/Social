@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-
-
 import './App.css';
 import fire from './config/fire';
 
@@ -18,16 +16,10 @@ class App extends Component {
   };
 
 
-    return <div>Hellow World!</div>;
-  };
-};
-
-
-
   render() {
     return (
       <div>
-        Hello World!
+        Hello World! Hows it going?
         <Demo />
       </div>
     );
