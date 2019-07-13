@@ -1,20 +1,28 @@
 import React, { Component } from "react";
-import "./App.css";
-import fire from "firebase/firebase-app";
-import Demo from "./config/components/location";
+
+
+import './App.css';
+import fire from './config/fire';
+
 class App extends Component {
   authListender() {
     fire.auth().onAuthStateChanged(user => {
-      console.log(user);
       if (user) {
         this.setState({ user });
         localStorage.setItem("user", user.uid);
       } else {
         this.setState({ user: null });
         localStorage.removeItem("user");
-      }
+      };
     });
-  }
+  };
+
+
+    return <div>Hellow World!</div>;
+  };
+};
+
+
 
   render() {
     return (
@@ -25,4 +33,5 @@ class App extends Component {
     );
   }
 }
+
 export default App;
