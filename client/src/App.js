@@ -1,34 +1,40 @@
-import React, { Component } from "react";
-
-
-import './App.css';
-import fire from './config/fire';
+import React, { Component } from "../node_modules/react";
+import "./App.css";
+import fire from "./config/Fire";
+import Login from "./Login";
+import Home from "./Home";
+require("firebase/auth");
 
 class App extends Component {
-  authListender() {
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: {}
+    };
+  }
+
+  componentDidMount() {
     fire.auth().onAuthStateChanged(user => {
+      //console.log(user);
       if (user) {
         this.setState({ user });
-        localStorage.setItem("user", user.uid);
+        //localStorage.setItem("user", user.uid);
       } else {
         this.setState({ user: null });
-        localStorage.removeItem("user");
-      };
+        // localStorage.removeItem("user");
+      }
     });
-  };
+  }
 
-
-    return <div>Hellow World!</div>;
-  };
-};
-
-
+  authListener() {}
 
   render() {
+    console.log(this.state.user);
     return (
-      <div>
-        Hello World!
-        <Demo />
+      <div className="App">
+        <div>Hellow World!</div>
+
+        {this.state.user ? <Home /> : <Login />}
       </div>
     );
   }

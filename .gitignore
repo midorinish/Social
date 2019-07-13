@@ -1,6 +1,16 @@
 
+# dependencies
+node_modules/
+/.pnp
+.pnp.js
 node_modules
+package-lock.json
+# testing
+coverage
+
+# production
 build
-.env
+
+# misc
 .DS_Store
 
