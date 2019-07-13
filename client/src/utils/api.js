@@ -1,5 +1,6 @@
 import axios from "axios";
 
+
 export default {
   getEvents: () => {
     return axios.get("/api/events");
@@ -24,3 +25,4 @@ export default {
 //     return axios.get(BASEURL + query + APIKEY);
 //   }
 // };
+
