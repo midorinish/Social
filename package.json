@@ -1,5 +1,5 @@
 {
-  "name": "mern",
+  "name": "social",
   "version": "1.0.0",
   "description": "Mern Demo",
   "main": "server.js",
@@ -24,10 +24,7 @@
     "express": "^4.16.3",
     "firebase": "^6.3.0",
     "if-env": "^1.0.4",
-
-    "mongoose": "^5.6.0",
-    "path": "^0.12.7",
-    "react-geolocated": "^2.5.0"
-
+    "mongoose": "^5.6.4",
+    "path": "^0.12.7"
   }
 }
