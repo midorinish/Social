@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
+const mongoose = require('mongoose');
 
 //middleware
 app.use(express.urlencoded({ extended: true }));
@@ -20,7 +21,7 @@ app.get("*", (req, res) => {
 });
 
 //Connect to Mongo DB
-mongoose.connect(process.env.MONGODB_URI || mongodb://user:password1@ds247827.mlab.com:47827/heroku_80s09n2r)
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://user:password1@ds247827.mlab.com:47827/heroku_80s09n2r')
 app.listen(PORT, () => {
   console.log("API server now on port" + PORT);
 });
