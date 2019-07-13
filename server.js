@@ -2,10 +2,7 @@ const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
-
-//middleware
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+const mongoose = require("mongoose");
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
@@ -13,8 +10,8 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Send every request to the React app
-mongoose.connect(process.env.MONGODB_URI || "mongodb://User:Password994@ds249717.mlab.com:49717/heroku_bnjqqdl0")
 
+mongoose.connect(process.env.MONGODB_URI || "mongodb://User:Password994@ds249717.mlab.com:49717/heroku_bnjqqdl0")
 // Define any API routes before this runs
 app.get("*", function (req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
