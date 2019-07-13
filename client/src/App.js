@@ -19,7 +19,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        Hello World! Hows it going?
+        Hello there!
       </div>
     );
   }
