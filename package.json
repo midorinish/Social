@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
   "name": "social",
-=======
-  "name": "mern",
->>>>>>> rezwansBranch
   "version": "1.0.0",
   "description": "Mern Demo",
   "main": "server.js",
@@ -28,11 +24,7 @@
     "express": "^4.16.3",
     "firebase": "^6.3.0",
     "if-env": "^1.0.4",
-<<<<<<< HEAD
     "mongoose": "^5.6.4",
     "path": "^0.12.7"
-=======
-    "mongoose": "^5.6.4"
->>>>>>> rezwansBranch
   }
 }
