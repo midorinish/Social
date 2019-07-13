@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "./App.css";
 import fire from "firebase/firebase-app";
 import Demo from "./config/components/location";
+import event from "./config/components/events";
+import MovieCard from "./config/components/eventsCard";
 class App extends Component {
   authListender() {
     fire.auth().onAuthStateChanged(user => {
@@ -21,6 +23,7 @@ class App extends Component {
       <div>
         Hello World!
         <Demo />
+        <event />
       </div>
     );
   }
