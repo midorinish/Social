@@ -20,7 +20,6 @@ class App extends Component {
     return (
       <div>
         Hello World! Hows it going?
-        <Demo />
       </div>
     );
   }
