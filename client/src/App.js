@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
+
 import './App.css';
 import fire from './config/fire';
-
 
 class App extends Component {
   authListender() {
@@ -22,5 +22,16 @@ class App extends Component {
   };
 };
 
+
+
+  render() {
+    return (
+      <div>
+        Hello World!
+        <Demo />
+      </div>
+    );
+  }
+}
 
 export default App;
