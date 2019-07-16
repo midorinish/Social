@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import './App.css';
-import fire from './config/fire';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Search from "./pages/Search";
 import Saved from "./pages/Saved";
-
+import fire from "./config/Fire";
+import Login from "./Login";
+import Home from "./Home";
+require("firebase/auth")
 
 
 class App extends Component {
@@ -40,10 +42,10 @@ class App extends Component {
               <Route path="/saved" component={Saved} />
             </Switch>
           </div>
-      </Router>
-      
-      {this.state.user ? <Home /> : <Login />}
-    </div>
+        </Router>
+
+        {this.state.user ? <Home /> : <Login />}
+      </div>
 
     );
   }
