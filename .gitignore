@@ -1,9 +1,9 @@
 
+
 # dependencies
 node_modules/
 /.pnp
 .pnp.js
-node_modules
 package-lock.json
 # testing
 coverage
@@ -13,4 +13,3 @@ build
 
 # misc
 .DS_Store
-

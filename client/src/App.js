@@ -1,9 +1,13 @@
-import React, { Component } from "../node_modules/react";
-import "./App.css";
+import React, { Component } from "react";
+import './App.css';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Search from "./pages/Search";
+import Saved from "./pages/Saved";
 import fire from "./config/Fire";
 import Login from "./Login";
 import Home from "./Home";
-require("firebase/auth");
+require("firebase/auth")
+
 
 class App extends Component {
   constructor(props) {
@@ -24,18 +28,25 @@ class App extends Component {
         // localStorage.removeItem("user");
       }
     });
-  }
-
-  authListener() {}
+  };
 
   render() {
     console.log(this.state.user);
     return (
       <div className="App">
-        <div>Hellow World!</div>
+        <Router>
+          <div>
+            Hello there!
+            <Switch>
+              <Route exact path="/" component={Search} />
+              <Route path="/saved" component={Saved} />
+            </Switch>
+          </div>
+        </Router>
 
         {this.state.user ? <Home /> : <Login />}
       </div>
+
     );
   }
 }
