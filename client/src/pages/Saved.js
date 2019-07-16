@@ -1,5 +1,5 @@
 import React from "react";
-import SearchRes from "../components/searchRes"
+import SearchResults from "../components/SearchResults"
 import API from "../utils/API";
 
 export default class Saved extends React.Component {
@@ -26,7 +26,7 @@ export default class Saved extends React.Component {
         console.log(this.state.savedEvents);
         return (
             <main>
-                <SearchRes savedEvents={this.state.savedEvents} path={this.props.match.path} />
+                <SearchResults savedEvents={this.state.savedEvents} path={this.props.match.path} />
             </main>
         )
     }

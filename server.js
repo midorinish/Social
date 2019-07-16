@@ -13,6 +13,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
+
 // Send every request to the React app
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://User:Password994@ds249717.mlab.com:49717/heroku_bnjqqdl0")

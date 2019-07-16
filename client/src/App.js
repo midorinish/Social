@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import './App.css';
 import fire from './config/fire';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Search from "./pages/Search";
+import Saved from "./pages/Saved";
+
 
 class App extends Component {
   authListender() {
@@ -18,9 +22,15 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        Hello there!
-      </div>
+      <Router>
+        <div>
+          Hello there!
+        <Switch>
+            <Route exact path="/" component={Search} />
+            <Route path="/saved" component={Saved} />
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }
