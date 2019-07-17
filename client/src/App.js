@@ -1,26 +1,52 @@
 import React, { Component } from "react";
 import './App.css';
-import fire from './config/fire';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Search from "./pages/Search";
+import Saved from "./pages/Saved";
+import fire from "./config/Fire";
+import Login from "./Login";
+import Home from "./Home";
+require("firebase/auth")
+
 
 class App extends Component {
-  authListender() {
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: {}
+    };
+  }
+
+  componentDidMount() {
     fire.auth().onAuthStateChanged(user => {
+      //console.log(user);
       if (user) {
         this.setState({ user });
-        localStorage.setItem("user", user.uid);
+        //localStorage.setItem("user", user.uid);
       } else {
         this.setState({ user: null });
-        localStorage.removeItem("user");
-      };
+        // localStorage.removeItem("user");
+      }
     });
   };
 
-
   render() {
+    console.log(this.state.user);
     return (
-      <div>
-        Hello World! Hows it going?
+      <div className="App">
+        <Router>
+          <div>
+            Hello there!
+            <Switch>
+              <Route exact path="/" component={Search} />
+              <Route path="/saved" component={Saved} />
+            </Switch>
+          </div>
+        </Router>
+
+        {this.state.user ? <Home /> : <Login />}
       </div>
+
     );
   }
 }

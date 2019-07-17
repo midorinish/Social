@@ -1,4 +1,5 @@
 const firebase = require("firebase/app");
+require("firebase/auth");
 
 //Firebase configuration
 const firebaseConfig = {
