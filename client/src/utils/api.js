@@ -1,20 +1,19 @@
 import axios from "axios";
 
-
 export default {
   getEvents: () => {
     return axios.get("/api/events");
   },
-  searchEvents: (title) => {
+  searchEvents: title => {
     return axios.post("/search", { title: title });
   },
-  addEventToDb: (eventData) => {
-    return axios.post("/api/events", eventData)
+  addEventToDb: eventData => {
+    return axios.post("/api/events", eventData);
   },
-  deleteEvent: (id) => {
+  deleteEvent: id => {
     return axios.delete(`/api/events/${id}`);
   }
-}
+};
 
 // const BASEURL =
 //   " https://api.stubhub.com/sellers/oauth/accesstoken?name=&eventLocalDate=&venue=&city=&state=&country=";
@@ -25,4 +24,3 @@ export default {
 //     return axios.get(BASEURL + query + APIKEY);
 //   }
 // };
-

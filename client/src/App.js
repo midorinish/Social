@@ -1,12 +1,13 @@
 import React, { Component } from "../node_modules/react";
 import "./App.css";
-import fire from "./config/Fire";
+import fire from "./config/fire";
 import Login from "./Login";
 import Home from "./Home";
+import Geocode from "./Geocode";
+import { geolocated } from "react-geolocated";
 require("firebase/auth");
 
->>>>>>> b85527b0932e13fcc37b565fadd4579d7339fe27
-class App extends Component {
+export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -34,12 +35,9 @@ class App extends Component {
     return (
       <div className="App">
         <div>Hellow World!</div>
-
         {this.state.user ? <Home /> : <Login />}
->>>>>>> b85527b0932e13fcc37b565fadd4579d7339fe27
+        <Geocode />
       </div>
     );
   }
 }
-
-export default App;
