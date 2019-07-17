@@ -1,5 +1,5 @@
 {
-  "name": "mern",
+  "name": "social",
   "version": "1.0.0",
   "description": "Mern Demo",
   "main": "server.js",
@@ -24,10 +24,16 @@
     "express": "^4.16.3",
     "firebase": "^6.3.0",
     "if-env": "^1.0.4",
-    "mongoose": "^5.6.0",
+    "mongoose": "^5.6.4",
     "path": "^0.12.7",
+<<<<<<< HEAD
     "react-geolocated": "^2.5.0",
     "react-google-location": "^1.2.2",
     "react-router-dom": "^5.0.1"
+=======
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "^3.0.1",
+     "react-geolocated": "^2.5.0"
+>>>>>>> 45534839c6d02e9f4381298655e4bd578b6adefb
   }
 }

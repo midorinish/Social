@@ -1,6 +1,9 @@
-import React, { Component } from "../node_modules/react";
+import React, { Component } from "react";
 import "./App.css";
-import fire from "./config/fire";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Search from "./pages/Search";
+import Saved from "./pages/Saved";
+import fire from "./config/Fire";
 import Login from "./Login";
 import Home from "./Home";
 import Geocode from "./Geocode";
@@ -28,13 +31,20 @@ export default class App extends Component {
     });
   }
 
-  authListener() {}
-
   render() {
     console.log(this.state.user);
     return (
       <div className="App">
-        <div>Hellow World!</div>
+        <Router>
+          <div>
+            Hello there!
+            <Switch>
+              <Route exact path="/" component={Search} />
+              <Route path="/saved" component={Saved} />
+            </Switch>
+          </div>
+        </Router>
+
         {this.state.user ? <Home /> : <Login />}
         <Geocode />
       </div>
