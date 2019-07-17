@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import fire from "./config/Fire";
+import fire from "../src/Login.js";
 
 class Login extends Component {
   constructor(props) {
@@ -43,35 +43,35 @@ class Login extends Component {
     return (
       <div className="col-md-6">
         <form>
-          <div class="form-group">
-            <label for="exampleInputEmail">Email Address</label>
+          <div className="form-group">
+            <label htmlFor="exampleInputEmail">Email Address</label>
             <input
               value={this.state.email}
               onChange={this.handleChange}
               type="email"
               name="email"
-              class="form-control"
+              className="form-control"
               id="exampleInputEmail"
               aria-describedby="emailHelp"
               placeholder="Enter Email"
             />
-            <small id="emailHelp" class="form-text text-muted">
+            <small id="emailHelp" className="form-text text-muted">
               We'll Never Share Your Email with Anyone
             </small>
           </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
+          <div className="form-group">
+            <label htmlFor="exampleInputPassword1">Password</label>
             <input
               value={this.state.password}
               onChange={this.handleChange}
               type="password"
               name="password"
-              class="form-control"
+              className="form-control"
               id="exampleInputPassword1"
               placeholder="Password"
             />
           </div>
-          <button type="submit" onClick={this.login} class="btn btn-primary">
+          <button type="submit" onClick={this.login} className="btn btn-primary">
             Login
           </button>
           <button

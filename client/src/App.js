@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Search from "./pages/Search";
 import Saved from "./pages/Saved";
-import fire from "./config/Fire";
+import fire from "./config/fire";
 import Login from "./Login";
 import Home from "./Home";
 require("firebase/auth")
