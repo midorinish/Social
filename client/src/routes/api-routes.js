@@ -1,6 +1,7 @@
 require("dotenv").config();
 const axios = require("axios");
-const Event = require("../models/Event");
+
+const db = require
 const path = require("path");
 
 module.exports = function (app) {
@@ -27,7 +28,7 @@ module.exports = function (app) {
       }
     ).catch(
       (err) => {
-        res.json({ error: err })
+        res.json({ error: error })
       }
     )
   });
