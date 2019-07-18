@@ -5,6 +5,7 @@ export default {
     return axios.get("/api/events");
   },
   searchEvents: (title) => {
+    console.log(title);
     return axios.post("/search", { title: title });
   },
   addEventToDb: (eventData) => {

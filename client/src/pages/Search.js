@@ -19,14 +19,18 @@ export default class Search extends React.Component {
         this.setState({ eventInput: e.target.value })
     }
 
-    handleSearchClick(e) {
+    handleSearchClick = (e) => {
         e.preventDefault();
+        console.log(this.state.eventInput);
         API.searchEvents(this.state.eventInput)
             .then(
                 (response) => {
+                    console.log("response ", response)
                     this.setState({ eventData: response.data });
                     this.setState({ eventInput: "" });
+
                 }
+
             );
     }
 

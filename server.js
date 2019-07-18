@@ -3,6 +3,13 @@ const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const mongoose = require("mongoose");
+const logger = require("morgan");
+
+
+// Middleware
+app.use(express.urlencoded({ extedned: true }))
+app.use(express.json());
+app.use(logger("common"));
 
 
 // Serve up static assets (usually on heroku)
