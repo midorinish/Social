@@ -1,6 +1,6 @@
 import React from "react";
 import SearchResults from "../components/SearchResults"
-import API from "../utils/API";
+import API from "../utils/api";
 
 export default class Saved extends React.Component {
     constructor(props) {
