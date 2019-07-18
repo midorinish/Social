@@ -1,7 +1,6 @@
 require("dotenv").config();
 const axios = require("axios");
-
-const db = require
+const Event = require("../models/Event");
 const path = require("path");
 
 module.exports = function (app) {
@@ -18,17 +17,19 @@ module.exports = function (app) {
   });
 
   app.post("/search", (req, res) => {
-
+    console.log(req.body);
     let eventTitle = req.body.title;
+    console.log("title ", eventTitle)
     axios.get(
       `https://api.stubhub.com/sellers/oauth/accesstoken?name=&eventLocalDate=&venue=&city=&state=&country?q=${eventTitle}&apikey=${process.env.EventsKey}`
     ).then(
-      (respons) => {
+      (response) => {
+        console.log("Response ", response.data)
         res.json(response.data.items)
       }
     ).catch(
       (err) => {
-        res.json({ error: error })
+        res.json({ error: err })
       }
     )
   });
