@@ -7,8 +7,13 @@ export default {
 searchEvents: (events) => {
     return axios.post("/search", { events });  
   },
+<<<<<<< HEAD
   addEventToDb: eventData => {
     return axios.post("/api/events", eventData);
+=======
+  searchEvents: (events) => {
+    return axios.post("/search", { events });
+>>>>>>> The app now searches events based off of the name of the event
   },
   deleteEvent: id => {
     return axios.delete(`/api/events/${id}`);
