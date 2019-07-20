@@ -17,8 +17,8 @@ module.exports = function (app) {
 
   app.post("/search", (req, res) => {
 
-    let eventTitle = req.body.city;
-    const BASEURL = `https://api.stubhub.com/sellers/search/events/v3?city=${eventTitle}`;
+    let eventTitle = req.body.events;
+    const BASEURL = `https://api.stubhub.com/sellers/search/events/v3?name=${eventTitle}&description=`;
     console.log(BASEURL);
     axios.get(BASEURL, {
       headers: {
