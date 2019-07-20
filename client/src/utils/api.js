@@ -1,15 +1,25 @@
 import axios from "axios";
 
-export getEvents = () => axios.get("/api/events");
+export default {
+  getEvents: () => axios.get("/api/events"),
+  searchEvents: (events) => axios.post("/search", { events }),
+  addEventToDb: eventData => axios.post("/api/events", eventData),
+  searchEvents: (events) => axios.post("/search", { events }),
+  deleteEvent: id => axios.delete(`/api/events/${id}`)
 
-export searchEvents = events  => axios.post("/search", { events });  
-                                                                                                                                                             
-export addEventToDb = eventData => axios.post("/api/events", eventData);
 
-export searchEvents = (events) => axios.post("/search", { events });
 
-export deleteEvent = id => axios.delete(`/api/events/${id}`);
-  
+}
+
+
+
+// export 
+
+// export );
+
+// export ;
+
+
 
 
 // const BASEURL =
