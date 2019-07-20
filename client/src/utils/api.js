@@ -1,24 +1,16 @@
 import axios from "axios";
 
-export default {
-  getEvents: () => {
-    return axios.get("/api/events");
-  }, 
-searchEvents: (events) => {
-    return axios.post("/search", { events });  
-  },
-<<<<<<< HEAD
-  addEventToDb: eventData => {
-    return axios.post("/api/events", eventData);
-=======
-  searchEvents: (events) => {
-    return axios.post("/search", { events });
->>>>>>> The app now searches events based off of the name of the event
-  },
-  deleteEvent: id => {
-    return axios.delete(`/api/events/${id}`);
-  }
-};
+export getEvents = () => axios.get("/api/events");
+
+export searchEvents = events  => axios.post("/search", { events });  
+                                                                                                                                                             
+export addEventToDb = eventData => axios.post("/api/events", eventData);
+
+export searchEvents = (events) => axios.post("/search", { events });
+
+export deleteEvent = id => axios.delete(`/api/events/${id}`);
+  
+
 
 // const BASEURL =
 //   " https://api.stubhub.com/sellers/oauth/accesstoken?name=&eventLocalDate=&venue=&city=&state=&country=";
