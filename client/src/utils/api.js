@@ -3,21 +3,9 @@ import axios from "axios";
 export default {
   getEvents: () => {
     return axios.get("/api/events");
-  },
-<<<<<<< HEAD
-<<<<<<< HEAD
-  searchEvents: (title) => {
-    console.log(title);
-=======
-  searchEvents: title => {
->>>>>>> b1acdf6efafab8203f260e7b709214befe848d95
-    return axios.post("/search", { title: title });
-=======
-
-  searchEvents: (events) => {
-    return axios.post("/search", { events });
-
->>>>>>> 2c9d6f2c459ee6e883519050b1e79f0dd52ee47b
+  }, 
+searchEvents: (events) => {
+    return axios.post("/search", { events });  
   },
   addEventToDb: eventData => {
     return axios.post("/api/events", eventData);
