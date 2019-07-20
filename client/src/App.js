@@ -6,8 +6,10 @@ import Saved from "./pages/Saved";
 import fire from "./config/fire";
 import Login from "./Login";
 import Home from "./Home";
+
 import Geocode from "./Geocode";
 import { geolocated } from "react-geolocated";
+
 require("firebase/auth");
 
 export default class App extends Component {

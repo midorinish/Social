@@ -29,14 +29,22 @@
 
     "react-geolocated": "^2.5.0",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "react-router-dom": "^5.0.1",
     "react-scripts": "^3.0.1"
   }
 }
 =======
+=======
+
+>>>>>>> 2c9d6f2c459ee6e883519050b1e79f0dd52ee47b
     "react-google-location": "^1.2.2",
     "react-router-dom": "^5.0.1"
     "react-scripts": "^3.0.1",
      "react-geolocated": "^2.5.0"
 
+<<<<<<< HEAD
 >>>>>>> b1acdf6efafab8203f260e7b709214befe848d95
+=======
+
+>>>>>>> 2c9d6f2c459ee6e883519050b1e79f0dd52ee47b
