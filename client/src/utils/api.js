@@ -4,8 +4,10 @@ export default {
   getEvents: () => {
     return axios.get("/api/events");
   },
-  searchEvents: title => {
-    return axios.post("/search", { title: title });
+
+  searchEvents: (events) => {
+    return axios.post("/search", { events });
+
   },
   addEventToDb: eventData => {
     return axios.post("/api/events", eventData);

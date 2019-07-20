@@ -1,5 +1,5 @@
 import React from "react";
-import SearchRes from "../components/SearchResults";
+import SearchResults from "../components/SearchResults";
 import ResultsHolder from "../components/ResultsHolder";
 import API from "../utils/api"
 
@@ -10,30 +10,30 @@ export default class Search extends React.Component {
             eventInput: "",
             eventData: []
         }
-        this.handleSearchClick = this.handleSearchClick.bind(this);
-        this.handleChange = this.handleChange.bind(this);
     }
 
-    handleChange(e) {
+    handleChange = (e) => {
         e.preventDefault();
         this.setState({ eventInput: e.target.value })
     }
 
-    handleSearchClick(e) {
+    handleSearchClick = (e) => {
         e.preventDefault();
+
+        console.log(this.state.eventInput);
         API.searchEvents(this.state.eventInput)
             .then(
-                (response) => {
-                    this.setState({ eventData: response.data });
-                    this.setState({ eventInput: "" });
+                (data) => {
+                    console.log("response ", data)
+                    this.setState({ eventData: data, eventInput: "" });
                 }
-            );
+            ).catch((err) => console.log(err));
     }
 
     render() {
         return (
             <main>
-                <SearchRes handleChange={this.handleChange} handleSearchClick={this.handleSearchClick} />
+                <SearchResults handleChange={this.handleChange} handleSearchClick={this.handleSearchClick} />
                 {(this.state.eventData.length > 0) ?
                     <ResultsHolder eventData={this.state.eventData} path={this.props.match.path} /> : null
                 }
