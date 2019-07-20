@@ -17,18 +17,18 @@ module.exports = function (app) {
     )
   });
 
-  app.post("/search", (req, res) => {
+  app.get("/search", (req, res) => {
 
     let eventTitle = req.body.title;
     axios.get(
-      `https://api.stubhub.com/sellers/oauth/accesstoken?name=&eventLocalDate=&venue=&city=&state=&country?q=${eventTitle}&apikey=${process.env.EventsKey}`
+      `https://api.stubhub.com/sellers/oauth/accesstoken?name=&eventLocalDate=&venue=&city=&state=&country?q=${eventTitle}&apikey=cxPnzvBZJHUGNksWDezaMpY59GwdnFVy`
     ).then(
-      (respons) => {
+      (response) => {
         res.json(response.data.items)
       }
     ).catch(
       (err) => {
-        res.json({ error: error })
+        res.json({ error: err })
       }
     )
   });

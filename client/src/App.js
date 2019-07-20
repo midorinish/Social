@@ -6,7 +6,7 @@ import Saved from "./pages/Saved";
 import fire from "./config/fire";
 import Login from "./Login";
 import Home from "./Home";
-require("firebase/auth")
+require("firebase/auth");
 
 
 class App extends Component {
