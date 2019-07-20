@@ -1,15 +1,16 @@
 import React, { Component } from "react";
-import './App.css';
+import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Search from "./pages/Search";
 import Saved from "./pages/Saved";
 import fire from "./config/fire";
 import Login from "./Login";
 import Home from "./Home";
-require("firebase/auth")
+import Geocode from "./Geocode";
+import { geolocated } from "react-geolocated";
+require("firebase/auth");
 
-
-class App extends Component {
+export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -28,7 +29,7 @@ class App extends Component {
         // localStorage.removeItem("user");
       }
     });
-  };
+  }
 
   render() {
     console.log(this.state.user);
@@ -45,10 +46,8 @@ class App extends Component {
         </Router>
 
         {this.state.user ? <Home /> : <Login />}
+        <Geocode />
       </div>
-
     );
   }
 }
-
-export default App;
