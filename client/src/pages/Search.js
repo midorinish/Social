@@ -1,7 +1,7 @@
 import React from "react";
 import SearchRes from "../components/SearchResults";
 import ResultsHolder from "../components/ResultsHolder";
-import API from "../utils/API"
+import API from "../utils/api"
 
 export default class Search extends React.Component {
     constructor(props) {
