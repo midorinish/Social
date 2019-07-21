@@ -1,7 +1,6 @@
 require("dotenv").config();
 const axios = require("axios");
 const Event = require("../models/Event");
-const path = require("path");
 
 module.exports = function (app) {
   app.get("/api/events", (req, res) => {
@@ -18,16 +17,24 @@ module.exports = function (app) {
 
   app.post("/search", (req, res) => {
 
-    let eventTitle = req.body.title;
-    axios.get(
-      `https://api.stubhub.com/sellers/oauth/accesstoken?name=&eventLocalDate=&venue=&city=&state=&country?q=${eventTitle}&apikey=${process.env.EventsKey}`
+    let eventTitle = req.body.events;
+    const BASEURL = `https://api.stubhub.com/sellers/search/events/v3?name=${eventTitle}&description=`;
+    console.log(BASEURL);
+    axios.get(BASEURL, {
+      headers: {
+        "Authorization": `Bearer ${process.env.StubhubKey}`,
+        "Accept": "application/json"
+      }
+    }
     ).then(
-      (respons) => {
-        res.json(response.data.items)
+      (response) => {
+        console.log('response', response.data);
+        return res.json(response.data)
       }
     ).catch(
       (err) => {
-        res.json({ error: err })
+        console.log('error', err.data);
+        return res.json({ error: err })
       }
     )
   });
