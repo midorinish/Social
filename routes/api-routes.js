@@ -22,7 +22,7 @@ module.exports = function (app) {
     console.log(BASEURL);
     axios.get(BASEURL, {
       headers: {
-        "Authorization": "Bearer lvgCjfiwTI1AnzSvkmnXA2DDYgVx",
+        "Authorization": `Bearer ${process.env.StubhubKey}`,
         "Accept": "application/json"
       }
     }
