@@ -26,6 +26,7 @@ export default class Search extends React.Component {
                 (data) => {
                     console.log("response ", data)
                     this.setState({ eventData: data, eventInput: "" });
+                    console.log(this.state.eventData)
                 }
             ).catch((err) => console.log(err));
     }
