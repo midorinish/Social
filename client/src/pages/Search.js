@@ -10,6 +10,8 @@ export default class Search extends React.Component {
             eventInput: "",
             eventData: []
         }
+        this.handleSearchClick = this.handleSearchClick.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
     handleChange = (e) => {
@@ -19,12 +21,9 @@ export default class Search extends React.Component {
 
     handleSearchClick = (e) => {
         e.preventDefault();
-
-        console.log(this.state.eventInput);
         API.searchEvents(this.state.eventInput)
             .then(
                 (data) => {
-                    console.log("response ", data)
                     this.setState({ eventData: data, eventInput: "" });
                     console.log(this.state.eventData)
                 }

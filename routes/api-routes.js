@@ -18,7 +18,7 @@ module.exports = function (app) {
   app.post("/search", (req, res) => {
 
     let eventTitle = req.body.events;
-    const BASEURL = `https://api.stubhub.com/sellers/search/events/v3?name=${eventTitle}&description=`;
+    const BASEURL = `https://api.stubhub.com/sellers/search/events/v3?name=${eventTitle}`;
     console.log(BASEURL);
     axios.get(BASEURL, {
       headers: {
@@ -28,12 +28,12 @@ module.exports = function (app) {
     }
     ).then(
       (response) => {
-        console.log('response', response.data);
-        return res.json(response.data)
+        // console.log('response', response.data.events[0]);
+        return res.json(response.data.events)
       }
     ).catch(
       (err) => {
-        console.log('error', err.data);
+        // console.log('error', err.data);
         return res.json({ error: err })
       }
     )
