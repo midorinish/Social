@@ -28,8 +28,8 @@
     "morgan": "^1.9.1",
     "path": "^0.12.7",
     "react-google-location": "^1.2.2",
-    "react-geolocated": "^2.5.0",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "^3.0.1"
+    "react-scripts": "^3.0.1",
+    "react-geolocated": "^2.5.0"
   }
 }
