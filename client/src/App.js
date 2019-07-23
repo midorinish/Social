@@ -8,7 +8,7 @@ import Login from "./Login";
 import Home from "./Home";
 
 import Geocode from "./Geocode";
-import { geolocated } from "react-geolocated";
+// import { geolocated } from "react-geolocated";
 
 require("firebase/auth");
 

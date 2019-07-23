@@ -6,7 +6,8 @@ import API from "../utils/api"
 export default class Search extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
+        state = {
+            Events: [],
             eventInput: "",
             eventData: []
         }
@@ -28,7 +29,14 @@ export default class Search extends React.Component {
                     console.log(this.state.eventData)
                 }
             ).catch((err) => console.log(err));
+        this.setState({ events: Response.data.Events })
     }
+
+    // handleEvents = (e) => {
+    //     e.preventDefault();
+    //     this.setState({ events: Response.data.events })
+    //     console.log(this.state.events)
+    // }
 
     render() {
         return (

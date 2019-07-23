@@ -13,6 +13,7 @@ export default class Saved extends React.Component {
     componentWillMount() {
         API.getEvents().then(
             (response) => {
+                console.log("response", response)
                 this.setState({ savedEvents: response.data });
             }
         ).catch(

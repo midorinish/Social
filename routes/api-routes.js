@@ -16,10 +16,9 @@ module.exports = function (app) {
   });
 
   app.post("/search", (req, res) => {
-
     let eventTitle = req.body.events;
     const BASEURL = `https://api.stubhub.com/sellers/search/events/v3?name=${eventTitle}`;
-    console.log(BASEURL);
+    console.log(BASEURL, eventTitle);
     axios.get(BASEURL, {
       headers: {
         "Authorization": `Bearer ${process.env.StubhubKey}`,
@@ -28,8 +27,9 @@ module.exports = function (app) {
     }
     ).then(
       (response) => {
-        // console.log('response', response.data.events[0]);
-        return res.json(response.data.events)
+        const eventsDiscription = response.data.events;
+        console.log('response', response.data.events);
+        return res.json(eventsDiscription);
       }
     ).catch(
       (err) => {
