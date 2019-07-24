@@ -24,8 +24,8 @@ export default function Main() {
         </div>
         <div className="collapse navbar-collapse navbar-right " id="myNavbar">
           <ul className="nav navbar-nav top-nav hide-on-mobile">
-            <li><a href="http://localhost:3000/login">Sign Up</a></li>
-            <li><a href="http://localhost:3000/login">Log In</a></li>
+            <li><a href="https://social-app-2019.herokuapp.com/login">Sign Up</a></li>
+            <li><a href="https://social-app-2019.herokuapp.com/login">Log In</a></li>
             <li><a href="#"><i className="fa fa-shopping-basket" aria-hidden="true"></i><span className="badge"></span></a></li>
             <li className="dropdown">
               <a href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i className="fa fa-bell" aria-hidden="true"></i><span className="badge"></span></a>
