@@ -6,6 +6,7 @@ import Saved from "./pages/Saved";
 import fire from "./config/fire";
 import Login from "./Login";
 import Home from "./Home";
+import Main from './Main/Main';
 
 import Geocode from "./Geocode";
 import { geolocated } from "react-geolocated";
@@ -43,6 +44,8 @@ export default class App extends Component {
             <Switch>
               <Route exact path="/" component={Search} />
               <Route path="/saved" component={Saved} />
+              <Route path="/login" component={Login} />
+              <Route exact path='/main' component={Main} />
             </Switch>
           </div>
         </Router>
