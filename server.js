@@ -28,7 +28,7 @@ mongoose.connect(
   "mongodb://localhost/Social", { useNewUrlParser: true, useFindAndModify: false, useCreateIndex: true }
 );
 
-require
+
 // Define any API routes before this runs
 app.get("*", function (req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));

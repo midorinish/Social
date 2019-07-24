@@ -4,20 +4,21 @@ import ResultsHolder from "../components/ResultsHolder";
 import API from "../utils/api"
 
 export default class Search extends React.Component {
-    constructor(props) {
-        super(props);
-        state = {
-            Events: [],
-            eventInput: "",
-            eventData: []
-        }
-        this.handleSearchClick = this.handleSearchClick.bind(this);
-        this.handleChange = this.handleChange.bind(this);
+    state = {
+        events: [],
+        eventInput: "",
+        eventData: []
     }
 
     handleChange = (e) => {
         e.preventDefault();
-        this.setState({ eventInput: e.target.value })
+        API.searchEvents(this.state.eventData)
+            .then(
+                (data) =>
+                    this.setState({ events: data })
+
+            ).catch((err) => console.log(err))
+
     }
 
     handleSearchClick = (e) => {
@@ -29,7 +30,7 @@ export default class Search extends React.Component {
                     console.log(this.state.eventData)
                 }
             ).catch((err) => console.log(err));
-        this.setState({ events: Response.data.Events })
+
     }
 
     // handleEvents = (e) => {
@@ -41,10 +42,15 @@ export default class Search extends React.Component {
     render() {
         return (
             <main>
-                <SearchResults handleChange={this.handleChange} handleSearchClick={this.handleSearchClick} />
+                <h4>Title</h4>
+                <p>Description</p>
+                {/* <input typeof="text" placeholder="Event Name"></input>
+                <button onChange={this.handleChange} onClick={this.handleSearchClick}>Submit</button> */}
+
+                {/* <SearchResults handleChange={this.handleChange} handleSearchClick={this.handleSearchClick} />
                 {(this.state.eventData.length > 0) ?
                     <ResultsHolder eventData={this.state.eventData} path={this.props.match.path} /> : null
-                }
+                } */}
             </main>
         )
     }
