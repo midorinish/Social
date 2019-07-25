@@ -6,12 +6,11 @@ import Saved from "./pages/Saved";
 import fire from "./config/fire";
 import Login from "./Login";
 import Home from "./Home";
-import Main from './Main/Main';
-import SearchPage from "./components/SearchPage"
+import Main from "./Main/Main";
+import SearchPage from "./components/SearchPage";
 
 import Geocode from "./Geocode";
 import { geolocated } from "react-geolocated";
-
 
 require("firebase/auth");
 
@@ -43,10 +42,9 @@ export default class App extends Component {
         <Router>
           <div>
             <Switch>
-
               <Route exact path="/searchpage" component={SearchPage} />
               <Route exact path="/login" component={Login} />
-              <Route exact path='/main' component={Main} />
+              <Route exact path="/main" component={Main} />
             </Switch>
           </div>
         </Router>
