@@ -7,6 +7,10 @@
   height: 15rem;
 }
 
+.height2 {
+  height: 5rem;
+}
+
 body {
   background-image: url("https://visiteurope.com/wp-content/uploads/Events4.jpg");
   opacity: 1;
