@@ -7,7 +7,7 @@ const URL =
   " https://api.stubhub.com/sellers/oauth/accesstoken?name=&eventLocalDate=&venue=&city=&state=&country=";
 const APIKEY = "&apikey=7FbUF2V6b5URGnMS8cySMMGCepFal5GC";
 
-class event extends Component {
+class Event extends Component {
   state = {
     eventInformation: {},
     title: ""
@@ -42,17 +42,15 @@ class event extends Component {
   render() {
     return (
       <div>
+        HI
         <eventsCard
           title={this.state.eventInformation.Title}
           plot={this.state.eventInformation.Plot}
         />
-
         {this.state.eventInformation.Rated === "G" && (
           <img src={this.state.eventInformation.Poster} alt={"event"} />
         )}
-
         <h2>Searching for this event... {this.state.title}</h2>
-
         <input
           type="text"
           placeholder="Enter event"
@@ -68,4 +66,4 @@ class event extends Component {
   }
 }
 
-export default event;
+export default Event;

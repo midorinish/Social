@@ -12,6 +12,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 export default function Main() {
   return (
+    
     <div>
       <nav className="navbar navbar-inverse site-nav">
         <div className="navbar-header">
