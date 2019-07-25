@@ -1,6 +1,6 @@
 import React from "react";
-import SearchResults from "../components/SearchResults"
 import API from "../utils/api";
+import ResultsHolder from "../components/ResultsHolder";
 
 export default class Saved extends React.Component {
     constructor(props) {
@@ -13,6 +13,7 @@ export default class Saved extends React.Component {
     componentWillMount() {
         API.getEvents().then(
             (response) => {
+                console.log("response", response)
                 this.setState({ savedEvents: response.data });
             }
         ).catch(
@@ -26,7 +27,7 @@ export default class Saved extends React.Component {
         console.log(this.state.savedEvents);
         return (
             <main>
-                <SearchResults savedEvents={this.state.savedEvents} path={this.props.match.path} />
+                <ResultsHolder savedEvents={this.state.savedEvents} path={this.props.match.path} />
             </main>
         )
     }

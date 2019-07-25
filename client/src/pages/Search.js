@@ -1,16 +1,13 @@
 import React from "react";
 import SearchResults from "../components/SearchResults";
-import ResultsHolder from "../components/ResultsHolder";
 import API from "../utils/api"
 
 export default class Search extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            eventInput: "",
-            eventData: []
-        }
+    state = {
+        eventInput: "",
+        eventsData: []
     }
+
 
     handleChange = (e) => {
         e.preventDefault();
@@ -19,24 +16,36 @@ export default class Search extends React.Component {
 
     handleSearchClick = (e) => {
         e.preventDefault();
-
-        console.log(this.state.eventInput);
         API.searchEvents(this.state.eventInput)
-            .then(
-                (data) => {
-                    console.log("response ", data)
-                    this.setState({ eventData: data, eventInput: "" });
-                }
-            ).catch((err) => console.log(err));
+            .then(response => {
+                console.log("response ", response)
+                this.setState({
+                    eventsData: response.data
+                })
+                this.setState({ eventInput: "" });
+            })
     }
 
     render() {
+        const { eventsData } = this.state;
+        const eventsList = eventsData.length ? (
+            eventsData.map(eventsData => {
+                return (
+                    <div className="post card" key={eventsData.id}>
+                        <div className="card-content">{eventsData.name}</div>
+                        <p>{eventsData.description}</p>
+                    </div>
+                )
+            })
+        ) : (
+                <div> className="center"> No posts yet </div>)
         return (
             <main>
-                {/* <SearchResults handleChange={this.handleChange} handleSearchClick={this.handleSearchClick} />
-                {(this.state.eventData.length > 0) ?
-                    <ResultsHolder eventData={this.state.eventData} path={this.props.match.path} /> : null
-                } */}
+                <div className="container">
+                    <h4 className="center">Home</h4>
+                    <SearchResults handleChange={this.handleChange} handleSearchClick={this.handleSearchClick} />
+                    {eventsList}
+                </div>
             </main>
         )
     }

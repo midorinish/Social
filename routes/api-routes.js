@@ -16,24 +16,24 @@ module.exports = function (app) {
   });
 
   app.post("/search", (req, res) => {
-
     let eventTitle = req.body.events;
-    const BASEURL = `https://api.stubhub.com/sellers/search/events/v3?name=${eventTitle}&description=`;
-    console.log(BASEURL);
+    const BASEURL = `https://api.stubhub.com/sellers/search/events/v3?name=${eventTitle}`;
+    console.log(BASEURL, eventTitle);
     axios.get(BASEURL, {
       headers: {
-        "Authorization": "Bearer lvgCjfiwTI1AnzSvkmnXA2DDYgVx",
+        "Authorization": `Bearer ${process.env.StubhubKey}`,
         "Accept": "application/json"
       }
     }
     ).then(
       (response) => {
-        console.log('response', response.data);
-        return res.json(response.data)
+        const eventsDiscription = response.data.events;
+        console.log('response', response.data.events);
+        return res.json(eventsDiscription);
       }
     ).catch(
       (err) => {
-        console.log('error', err.data);
+        // console.log('error', err.data);
         return res.json({ error: err })
       }
     )

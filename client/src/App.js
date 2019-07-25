@@ -12,13 +12,12 @@ import Event from "./components/events";
 import "../src/Login.css";
 
 import Geocode from "./Geocode";
-import { geolocated } from "react-geolocated";
+// import { geolocated } from "react-geolocated";
 
 require("firebase/auth");
 
 export default class App extends Component {
   render() {
-    // console.log(this.state.user);
     return (
       <div className="App">
         <Router>
