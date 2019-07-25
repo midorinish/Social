@@ -5,8 +5,6 @@ import Search from '../pages/Search';
 
 export default class SearchPage extends Component {
 
-
-
     render() {
         return (
             <div className="SearchPage">
