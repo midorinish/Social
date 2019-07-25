@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function MovieCard(props) {
+export default function eventsCard(props) {
   return (
     <div>
       <h1>Event Title: {props.title}</h1>

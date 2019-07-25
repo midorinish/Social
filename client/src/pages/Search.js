@@ -5,52 +5,48 @@ import API from "../utils/api"
 
 export default class Search extends React.Component {
     state = {
-        events: [],
         eventInput: "",
-        eventData: []
+        eventsData: []
     }
+
 
     handleChange = (e) => {
         e.preventDefault();
-        API.searchEvents(this.state.eventData)
-            .then(
-                (data) =>
-                    this.setState({ events: data })
-
-            ).catch((err) => console.log(err))
-
+        this.setState({ eventInput: e.target.value })
     }
 
     handleSearchClick = (e) => {
         e.preventDefault();
         API.searchEvents(this.state.eventInput)
-            .then(
-                (data) => {
-                    this.setState({ eventData: data, eventInput: "" });
-                    console.log(this.state.eventData)
-                }
-            ).catch((err) => console.log(err));
-
+            .then(response => {
+                console.log("response ", response)
+                this.setState({
+                    eventsData: response.data
+                })
+                this.setState({ eventInput: "" });
+            })
     }
 
-    // handleEvents = (e) => {
-    //     e.preventDefault();
-    //     this.setState({ events: Response.data.events })
-    //     console.log(this.state.events)
-    // }
-
     render() {
+        const { eventsData } = this.state;
+        const eventsList = eventsData.length ? (
+            eventsData.map(eventsData => {
+                return (
+                    <div className="post card" key={eventsData.id}>
+                        <div className="card-content">{eventsData.name}</div>
+                        <p>{eventsData.description}</p>
+                    </div>
+                )
+            })
+        ) : (
+                <div> className="center"> No posts yet </div>)
         return (
             <main>
-                <h4>Title</h4>
-                <p>Description</p>
-                {/* <input typeof="text" placeholder="Event Name"></input>
-                <button onChange={this.handleChange} onClick={this.handleSearchClick}>Submit</button> */}
-
-                {/* <SearchResults handleChange={this.handleChange} handleSearchClick={this.handleSearchClick} />
-                {(this.state.eventData.length > 0) ?
-                    <ResultsHolder eventData={this.state.eventData} path={this.props.match.path} /> : null
-                } */}
+                <div className="container">
+                    <h4 className="center">Home</h4>
+                    <SearchResults handleChange={this.handleChange} handleSearchClick={this.handleSearchClick} />
+                    {eventsList}
+                </div>
             </main>
         )
     }
