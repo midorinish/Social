@@ -71,9 +71,6 @@ class Login extends Component {
                 placeholder="Enter Email"
               />
               <br />
-              <small id="emailHelp" className="form-text text-muted">
-                We'll Never Share Your Email with Anyone
-              </small>
             </div>
             <div className="form-group">
               <label htmlFor="exampleInputPassword1">Password </label>
