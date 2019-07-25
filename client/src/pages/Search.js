@@ -8,7 +8,6 @@ export default class Search extends React.Component {
         eventsData: []
     }
 
-
     handleChange = (e) => {
         e.preventDefault();
         this.setState({ eventInput: e.target.value })
@@ -34,11 +33,19 @@ export default class Search extends React.Component {
                     <div className="post card" key={eventsData.id}>
                         <div className="card-content">{eventsData.name}</div>
                         <p>{eventsData.description}</p>
+                        <p>{eventsData.eventDateLocal}</p>
+                        <p>{eventsData.eventDateUTC}</p>
+                        <p>-- Currency --</p>
+                        <p>{eventsData.currencyCode}</p>
+                        <p>-- Minimum Listing Price --</p>
+                        <p>{eventsData.ticketInfo.minListPrice}</p>
+                        <p>-- Maximum Listing Price --</p>
+                        <p>{eventsData.ticketInfo.maxListPrice}</p>
                     </div>
                 )
             })
         ) : (
-                <div> className="center"> No posts yet </div>)
+                <div className="center"> No posts yet </div>)
         return (
             <main>
                 <div className="container">
