@@ -102,6 +102,7 @@ class Login extends Component {
               Signup
             </button>
           </form>
+          <div className="height2" />
           {this.state.user ? <Home /> : <SearchPage />}
         </div>
       </body>
