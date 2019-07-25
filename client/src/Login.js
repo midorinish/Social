@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import fire from "./config/fire";
 import "../src/Login.css";
 import Home from "../src/Home";
+import SearchPage from "./components/SearchPage";
+import Search from "./pages/Search";
+import App from "./App";
 
 class Login extends Component {
   constructor(props) {
@@ -99,7 +102,7 @@ class Login extends Component {
               Signup
             </button>
           </form>
-          {/* {this.state.user ? <Home /> : <Login />} */}
+          {this.state.user ? <Home /> : <SearchPage />}
         </div>
       </body>
     );

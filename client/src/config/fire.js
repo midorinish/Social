@@ -3,7 +3,8 @@ require("firebase/auth");
 
 //Firebase configuration
 const firebaseConfig = {
-  apiKey: `${process.env.fireKey}`,
+  apiKey: "AIzaSyCSYm-xiv8rVeSn8-ILy-SnGhE76OmDNU8",
+  /*apiKey: `${process.env.fireKey}`,*/
   authDomain: "social-bd5dc.firebaseapp.com",
   databaseURL: "https://social-bd5dc.firebaseio.com",
   projectId: "social-bd5dc",
