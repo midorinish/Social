@@ -12,13 +12,15 @@
     "react-dom": "^16.8.6",
     "react-geolocated": "^2.5.0",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "scss": "^0.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "scss": "node-sass --watch scss -o css"
   },
   "browserslist": {
     "production": [

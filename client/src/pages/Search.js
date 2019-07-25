@@ -33,10 +33,10 @@ export default class Search extends React.Component {
     render() {
         return (
             <main>
-                {/* <SearchResults handleChange={this.handleChange} handleSearchClick={this.handleSearchClick} />
+                <SearchResults handleChange={this.handleChange} handleSearchClick={this.handleSearchClick} />
                 {(this.state.eventData.length > 0) ?
                     <ResultsHolder eventData={this.state.eventData} path={this.props.match.path} /> : null
-                } */}
+                }
             </main>
         )
     }
