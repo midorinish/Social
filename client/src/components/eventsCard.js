@@ -8,5 +8,3 @@ export default function eventsCard(props) {
     </div>
   );
 }
-
-export default MovieCard;

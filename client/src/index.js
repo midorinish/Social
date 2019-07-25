@@ -2,7 +2,7 @@ import React from "../node_modules/react";
 import ReactDOM from "../node_modules/react-dom";
 import "./index.css";
 import App from "./App";
-import Main from "./Main/Main";
+//import Main from "./Main/Main";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(<App />, document.getElementById("root"));

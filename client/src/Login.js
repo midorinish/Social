@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import fire from "./config/fire";
+import "../src/Login.css";
+import Home from "../src/Home";
 
 class Login extends Component {
   constructor(props) {
@@ -9,8 +11,19 @@ class Login extends Component {
     this.signup = this.signup.bind(this);
     this.state = {
       email: "",
-      password: ""
+      password: "",
+      user: {}
     };
+  }
+
+  componentDidMount() {
+    fire.auth().onAuthStateChanged(user => {
+      if (user) {
+        this.setState({ user });
+      } else {
+        this.setState({ user: null });
+      }
+    });
   }
 
   login(e) {
@@ -41,48 +54,57 @@ class Login extends Component {
 
   render() {
     return (
-      <div className="col-md-6">
-        <form>
-          <div className="form-group">
-            <label htmlFor="exampleInputEmail">Email Address</label>
-            <input
-              value={this.state.email}
-              onChange={this.handleChange}
-              type="email"
-              name="email"
-              className="form-control"
-              id="exampleInputEmail"
-              aria-describedby="emailHelp"
-              placeholder="Enter Email"
-            />
-            <small id="emailHelp" className="form-text text-muted">
-              We'll Never Share Your Email with Anyone
-            </small>
-          </div>
-          <div className="form-group">
-            <label htmlFor="exampleInputPassword1">Password</label>
-            <input
-              value={this.state.password}
-              onChange={this.handleChange}
-              type="password"
-              name="password"
-              className="form-control"
-              id="exampleInputPassword1"
-              placeholder="Password"
-            />
-          </div>
-          <button type="submit" onClick={this.login} className="btn btn-primary">
-            Login
-          </button>
-          <button
-            onClick={this.signup}
-            style={{ marginLeft: "25px" }}
-            className="btn btn-success"
-          >
-            Signup
-          </button>
-        </form>
-      </div>
+      <body>
+        <div className="col-md-6">
+          <div className="height" />
+          <form>
+            <div className="form-group">
+              <label htmlFor="exampleInputEmail">Email Address </label>
+              <input
+                value={this.state.email}
+                onChange={this.handleChange}
+                type="email"
+                name="email"
+                className="form-control"
+                id="exampleInputEmail"
+                aria-describedby="emailHelp"
+                placeholder="Enter Email"
+              />
+              <br />
+              <small id="emailHelp" className="form-text text-muted">
+                We'll Never Share Your Email with Anyone
+              </small>
+            </div>
+            <div className="form-group">
+              <label htmlFor="exampleInputPassword1">Password </label>
+              <input
+                value={this.state.password}
+                onChange={this.handleChange}
+                type="password"
+                name="password"
+                className="form-control"
+                id="exampleInputPassword1"
+                placeholder="Password"
+              />
+            </div>
+            <button
+              type="submit"
+              onClick={this.login}
+              className="btn btn-primary lrg"
+            >
+              Login
+            </button>
+            <button
+              onClick={this.signup}
+              style={{ marginLeft: "25px" }}
+              className="btn btn-success"
+            >
+              Signup
+            </button>
+          </form>
+          {/* {this.state.user ? <Home /> : <Login />} */}
+        </div>
+      </body>
     );
   }
 }
