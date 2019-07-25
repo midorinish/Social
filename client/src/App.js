@@ -10,7 +10,7 @@ import Main from './Main/Main';
 import SearchPage from "./components/SearchPage"
 
 import Geocode from "./Geocode";
-import { geolocated } from "react-geolocated";
+// import { geolocated } from "react-geolocated";
 
 
 require("firebase/auth");
@@ -33,7 +33,7 @@ export default class App extends Component {
         this.setState({ user: null });
         // localStorage.removeItem("user");
       }
-    });
+    })
   }
 
   render() {
