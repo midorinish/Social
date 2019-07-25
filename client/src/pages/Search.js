@@ -45,7 +45,7 @@ export default class Search extends React.Component {
                 )
             })
         ) : (
-                <div> className="center"> No posts yet </div>)
+                <div className="center"> No posts yet </div>)
         return (
             <main>
                 <div className="container">
