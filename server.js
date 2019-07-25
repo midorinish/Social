@@ -2,9 +2,11 @@ const bodyParser = require('body-parser');
 const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
-const app = express();
+const app = express.Router();
 const mongoose = require("mongoose");
 const logger = require("morgan");
+const cors = require('cors');
+let eventsSchema = require('./models/Event.js')
 
 // Middleware
 app.use(express.urlencoded({ extedned: true }))
@@ -16,6 +18,8 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
+app.use(cors());
+app.use(bodyParser.json())
 // Send every request to the React app
 
 require("./routes/api-routes")(app);
@@ -23,6 +27,13 @@ require("./routes/api-routes")(app);
 mongoose.connect(
   process.env.MONGODB_URI ||
   "mongodb://localhost/Social", { useNewUrlParser: true, useFindAndModify: false, useCreateIndex: true });
+
+const connection = mongoose.connection;
+
+
+connection.once('open', function () { // The 'open' shows that the connection is now open and ready to connect.
+  console.log("MongoDB database connection established");
+})
 
 // Define any API routes before this runs
 app.get("*", function (req, res) {
